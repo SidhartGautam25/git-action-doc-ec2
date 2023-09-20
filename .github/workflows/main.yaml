@@ -26,6 +26,13 @@ jobs:
      - name: publish docker image
        run: docker push navneetnishchal/simple-node-app:latest
   deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: pull image from docker Hub
+        run: docker pull navneetnishchal/simple-node-app:latest
+      - name: run docker image
+        run: docker run -d -p 3000:3000 -name node-app navneetnishchal/simple-node-app:latest
 
 
 
