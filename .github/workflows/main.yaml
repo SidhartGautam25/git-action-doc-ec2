@@ -32,7 +32,7 @@ jobs:
       - name: pull image from docker Hub from my account
         run: docker pull navneetnishchal/simple-node-app:latest
       - name: run docker image
-        run: docker run -d -p 3000:3000 -name node-app navneetnishchal/simple-node-app:latest
+        run: docker run -d -p 3000:3000 --name node-app navneetnishchal/simple-node-app:latest
 
 
 
